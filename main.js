@@ -1,6 +1,8 @@
 const button = document.querySelector("#Button");
 const output = document.querySelector(".randomNames");
 const Shark = document.querySelector(".randomShark");
+const imgPerson = document.querySelector(".imgPerson");
+
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -12,7 +14,26 @@ button.addEventListener("click", () => {
     apellidos[getRandomInt(0, 100)]
   }`;
   Shark.innerText = FrasesDeShark[getRandomInt(0, 10)];
+  displayRandomPerson();
 });
+
+async function getRandomPerson() {
+  const response = await fetch("https://randomuser.me/api/");
+  const data = await response.json();
+  const person = data.results[0];
+
+  const imageUrl = person.picture.large;
+
+  return { imageUrl };
+}
+
+async function displayRandomPerson() {
+  const { imageUrl } = await getRandomPerson();
+
+  const image = document.createElement("img");
+  image.src = imageUrl;
+  imgPerson.appendChild(image);
+}
 
 const FrasesDeShark = [
   "toma enana",
