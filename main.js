@@ -46,6 +46,7 @@ const FrasesDeShark = [
   "te wa a nalguea",
   "vas a ve te wa a jode",
   "te voy a reventar",
+  "te quiero mucho <3"
 ];
 
 const nombres = [

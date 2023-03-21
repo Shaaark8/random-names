@@ -44,3 +44,8 @@ transform: scale(0.98);
   font-size: 30px;
   color: #f5f5f5;
 }
+
+.imgPerson img{
+  border-radius: 50%;
+  width: 130px;
+}
